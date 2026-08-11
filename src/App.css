@@ -1,0 +1,167 @@
+/* Reset y centrado de la página completa */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center; /* Centrado vertical/horizontal en navegadores modernos */
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #1a1d23;
+  color: white;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.app-container {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+/* Cabecera centrada y con logos grandes */
+.nav-top {
+  background: #242933;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 2px solid #333;
+  display: flex;
+  justify-content: center; /* Centra el contenido de la nav */
+}
+
+.nav-content {
+  width: 90%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-ies {
+  height: 80px; /* Logo más grande */
+  width: auto;
+  filter: drop-shadow(0 0 10px rgba(20, 158, 202, 0.3));
+}
+
+.logo-gob {
+  height: 65px; /* Logo más grande */
+  width: auto;
+}
+
+.brand-text {
+  font-size: 1.8rem;
+  margin-left: 20px;
+  color: #fff;
+}
+
+/* El truco del centrado: Main Wrapper */
+.main-wrapper {
+  max-width: 1100px;
+  margin: 40px auto; /* Auto en los lados centra el bloque */
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los hijos (form y grid) */
+}
+
+/* Ficha del alumno */
+.form-card {
+  background: #2b303b;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  width: 100%;
+  max-width: 600px; /* Ancho cómodo para el formulario */
+  margin-bottom: 50px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #149eca;
+  letter-spacing: 1px;
+}
+
+/* Inputs y Selects */
+.input-group, .row {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+input, select {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #454e5c;
+  background: #1a1d23;
+  color: white;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+}
+
+/* Botones */
+.button-group {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+.btn-save { background: #149eca; color: white; padding: 15px; }
+.btn-clear { background: #454e5c; color: white; }
+.btn-pdf-full {
+  width: 100%;
+  margin-top: 15px;
+  background: #10b981;
+  color: white;
+  padding: 18px;
+  font-size: 1rem;
+}
+
+/* Cuadrícula inferior: Tabla a la izquierda, Gráfico a la derecha */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.table-container, .chart-container {
+  background: #2b303b;
+  padding: 25px;
+  border-radius: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #3b4252;
+}
+
+.btn-baja { background: #ef4444; color: white; padding: 5px 10px; }
