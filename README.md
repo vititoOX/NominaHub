@@ -165,8 +165,7 @@ GET    /api/health
 
 La integración continua comprueba automáticamente:
 
-- Instalación limpia de dependencias del frontend con `npm ci`.
-- Build de producción de Angular.
+- Instalación de dependencias y build del frontend Angular.
 - Instalación del backend en Python 3.12.
 - Prueba del health check de la API.
 - Prueba del login del usuario demo.
