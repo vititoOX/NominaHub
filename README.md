@@ -1,16 +1,56 @@
-# React + Vite
+# NominaHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ERP full stack de gestión de empleados y nóminas orientado a portfolio profesional.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Angular + TypeScript + PrimeNG
+- Python + Flask + API REST
+- PostgreSQL + SQLAlchemy
+- JWT y control de roles
+- WeasyPrint para recibos PDF
+- Docker Compose
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Login JWT con roles `admin` y `rrhh`
+- Dashboard con KPIs de plantilla y coste salarial
+- Alta y consulta de empleados
+- Generación de nóminas con salario base, complementos, IRPF y Seguridad Social
+- Estado borrador/pagada
+- Descarga de recibos PDF
+- Datos demo automáticos en desarrollo
 
-## Expanding the ESLint configuration
+## Arranque con Docker
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+cp .env.example .env
+docker compose up --build
+```
+
+- Frontend: http://localhost:4200
+- API: http://localhost:5000/api/health
+
+Usuario demo: `admin@nominahub.local` / `Admin123!`
+
+> Cambia las credenciales y `JWT_SECRET_KEY` antes de cualquier despliegue real.
+
+## Arranque manual
+
+### Backend
+
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
+pip install -r requirements.txt
+flask --app run.py run --debug
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm start
+```
